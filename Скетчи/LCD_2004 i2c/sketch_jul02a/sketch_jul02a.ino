@@ -6,8 +6,7 @@ LiquidCrystal_I2C lcd(0x27,20,4);   /* Задаем адрес и размерн
 
 void setup()
 {
-  lcd.begin();
-//  lcd.init();                            // Инициализация lcd             
+  lcd.init();                            // Инициализация lcd             
   lcd.backlight();                       // Включаем подсветку
   // Курсор находится в начале 1 строки
   lcd.print("Hello, world!");            // Выводим текст

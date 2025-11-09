@@ -8,14 +8,14 @@
 #endif
  
 // Коэффициент перевода напряжения в концентрацию pH
-#define CALIBRATION_FACTOR  0.6
+#define CALIBRATION_FACTOR  3.5
  
 // Назначаем пин для подключения датчика
-constexpr auto pinSensor = 4 ;
+constexpr auto pinSensor = A0;
  
 void setup() {
   // Открываем Serial-порт
-  Serial.begin(115200);
+  Serial.begin(9600);
 }
  
 void loop() {

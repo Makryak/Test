@@ -7,7 +7,7 @@
 
 dht DHT; //Declaring the DHT
 
-#define DHT22_PIN 5 //DHT data pin here I used D7 you can change it
+#define DHT22_PIN 11 //DHT data pin here I used D7 you can change it
 
 void setup(){
   Serial.begin(9600); //Serial baude rate

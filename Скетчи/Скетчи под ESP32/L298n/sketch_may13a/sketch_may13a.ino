@@ -1,0 +1,44 @@
+// Motor A
+int motor1Pin1 = 27; 
+
+int enable1Pin = 13; 
+
+// Setting PWM properties
+const int freq = 30000;
+const int pwmChannel = 0;
+const int resolution = 8;
+int dutyCycle = 200;
+
+void setup() {
+  // sets the pins as outputs:
+  pinMode(motor1Pin1, OUTPUT);
+
+  pinMode(enable1Pin, OUTPUT);
+  
+  // configure LED PWM functionalitites
+  ledcSetup(pwmChannel, freq, resolution);
+  
+  // attach the channel to the GPIO to be controlled
+  ledcAttachPin(enable1Pin, pwmChannel);
+
+  Serial.begin(115200);
+
+  // testing
+  Serial.print("Testing DC Motor...");
+}
+
+void loop() {
+
+
+  // Move DC motor forward with increasing speed
+  digitalWrite(motor1Pin1, HIGH);
+
+  while (dutyCycle <= 255){
+    ledcWrite(pwmChannel, dutyCycle);   
+    Serial.print("Forward with duty cycle: ");
+    Serial.println(dutyCycle);
+    dutyCycle = 10;
+    delay(500);
+  }
+  dutyCycle = 200;
+}

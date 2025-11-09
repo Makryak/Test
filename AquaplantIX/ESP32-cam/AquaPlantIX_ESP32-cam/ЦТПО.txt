@@ -1,0 +1,6 @@
+const char* ssid = "TP-Link_A39E";
+const char* password = "75845100";
+
+
+const char* ssid = "DEG_200";
+const char* password = "9036154344";
